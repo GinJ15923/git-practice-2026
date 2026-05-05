@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防网络诈骗智能预警系统</title>
+    <link rel="stylesheet" href="styleweb.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-icon">🛡️</div>
+                <h1>防网络诈骗智能预警系统</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="home">首页</a></li>
+                    <li><a href="#" class="nav-link" data-page="features">功能介绍</a></li>
+                    <li><a href="#" class="nav-link" data-page="knowledge">防诈知识</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主要内容 -->
+    <main class="content-wrapper">
+        <!-- 首页内容 -->
+        <div id="home-page" class="page-content active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h2>智能识别诈骗风险，守护您的财产安全</h2>
+                    <p class="hero-subtitle">通过先进的文本分析技术，快速识别潜在诈骗内容，提供专业的风险评估和防范建议</p>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="sidebar-section">
+                    <aside class="feature-sidebar">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h3>文本风险检测</h3>
+                            <p>输入或粘贴可疑文本，系统将自动分析其中的风险因素</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <h3>风险自测评估</h3>
+                            <p>通过问卷评估个人面临网络诈骗的风险等级</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💡</div>
+                            <h3>防诈知识学习</h3>
+                            <p>了解各类诈骗手段和有效的防范措施</p>
+                        </div>
+                    </aside>
+                </div>
+                
+                <div class="central-content">
+                    <div class="instruction-section">
+                        <h3>使用说明</h3>
+                        <div class="instruction-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <p>输入文本到下方文本框并点击"检测风险"按钮</p>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <p>或者选中任何网页上的文本，右键选择"检测选中文本风险"</p>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <p>系统会自动分析文本中的风险点并提供预警</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="textInputArea" class="input-section">
+                        <div class="input-header">
+                            <h3>文本风险检测</h3>
+                            <p class="input-description">输入或粘贴可疑文本，系统将自动检测其中的风险因素</p>
+                        </div>
+                        <textarea id="inputText" rows="12" placeholder="请输入需要检测的文本..." class="text-input-field"></textarea>
+                        <div class="button-group">
+                            <button id="checkRiskBtn" class="primary-button">检测风险</button>
+                            <button id="selfEvaluationBtn" class="secondary-button">风险检测自测</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能介绍页面 -->
+        <div id="features-page" class="page-content">
+            <!-- 横向导航 -->
+            <div class="features-horizontal-nav">
+                <div class="features-nav-container">
+                    <div class="features-nav-card active" data-feature="text-detection">
+                        <div class="nav-icon">🔍</div>
+                        <div class="nav-content">
+                            <h3>文本风险检测</h3>
+                            <p>智能分析可疑文本内容</p>
+                        </div>
+                        <div class="nav-indicator"></div>
+                    </div>
+                    <div class="features-nav-card" data-feature="self-evaluation">
+                        <div class="nav-icon">📝</div>
+                        <div class="nav-content">
+                            <h3>风险自测评估</h3>
+                            <p>个人风险等级评估</p>
+                        </div>
+                        <div class="nav-indicator"></div>
+                    </div>
+                    <div class="features-nav-card" data-feature="knowledge-learning">
+                        <div class="nav-icon">💡</div>
+                        <div class="nav-content">
+                            <h3>防诈知识学习</h3>
+                            <p>学习防范知识与技巧</p>
+                        </div>
+                        <div class="nav-indicator"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-main-content">
+                <div class="central-content">
+                    <div class="features-content-section">
+                        <!-- 文本风险检测详情 -->
+                        <div id="text-detection-content" class="feature-detail active">
+                            <!-- 优化后的左上角部分 -->
+                            <div class="feature-hero-section">
+                                <div class="feature-hero-content">
+                                    <div class="feature-badge">核心功能</div>
+                                    <h1 class="feature-main-title">文本风险检测</h1>
+                                    <p class="feature-hero-description">智能分析可疑文本内容，快速识别潜在诈骗风险</p>
+                                    <div class="feature-stats">
+                                        <div class="stat-item">
+                                            <div class="stat-number">99%</div>
+                                            <div class="stat-label">识别准确率</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">0.5s</div>
+                                            <div class="stat-label">检测速度</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">50+</div>
+                                            <div class="stat-label">诈骗类型</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-hero-visual">
+                                    <div class="visual-icon">🔍</div>
+                                    <div class="visual-glow"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-description">
+                                <p>通过先进的文本分析技术，快速识别潜在诈骗内容，提供专业的风险评估和防范建议。</p>
+                            </div>
+                            
+                            <div class="feature-showcase">
+                                <div class="showcase-image">
+                                    <div class="feature-image-placeholder">
+                                        <svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="300" height="180" rx="8" fill="#f0f4f8"/>
+                                            <rect x="20" y="20" width="260" height="30" rx="4" fill="#e9ecef"/>
+                                            <rect x="20" y="60" width="260" height="30" rx="4" fill="#e9ecef"/>
+                                            <rect x="20" y="100" width="180" height="30" rx="15" fill="#3498db"/>
+                                            <circle cx="230" cy="115" r="15" fill="#2ecc71"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="showcase-content">
+                                    <h3>功能演示</h3>
+                                    <div class="demo-example">
+                                        <div class="example-text">
+                                            <strong>示例文本：</strong>
+                                            <p class="example-text-content">"恭喜您获得我们的大奖！请先支付2000元手续费即可领取10万元奖金。"</p>
+                                        </div>
+                                        <div class="example-result">
+                                            <strong>检测结果：</strong>
+                                            <p class="result-text"><span class="high-risk-icon">🔴</span> 高风险 - 中奖诈骗类型</p>
+                                        </div>
+                                    </div>
+                                    <button class="primary-button try-now-button" onclick="showPage('home')">立即体验</button>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-benefits">
+                                <h3>为什么选择我们的文本风险检测？</h3>
+                                <div class="benefits-grid">
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">⚡</div>
+                                        <h4>快速检测</h4>
+                                        <p>实时分析文本内容，秒级返回检测结果</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🎯</div>
+                                        <h4>精准识别</h4>
+                                        <p>基于大量诈骗案例训练，识别准确率高</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🛡️</div>
+                                        <h4>全面防护</h4>
+                                        <p>覆盖多种诈骗类型，提供针对性建议</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🔄</div>
+                                        <h4>持续更新</h4>
+                                        <p>不断学习新的诈骗模式，保持检测有效性</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-usage">
+                                <h3>使用场景</h3>
+                                <div class="usage-list">
+                                    <div class="usage-item">
+                                        <div class="usage-icon">📱</div>
+                                        <div class="usage-text">
+                                            <strong>短信/聊天信息</strong>
+                                            <p>检测可疑的短信、微信、QQ等聊天信息中的诈骗风险</p>
+                                        </div>
+                                    </div>
+                                    <div class="usage-item">
+                                        <div class="usage-icon">📧</div>
+                                        <div class="usage-text">
+                                            <strong>邮件内容</strong>
+                                            <p>分析收到的邮件内容，识别钓鱼邮件和诈骗信息</p>
+                                        </div>
+                                    </div>
+                                    <div class="usage-item">
+                                        <div class="usage-icon">🔗</div>
+                                        <div class="usage-text">
+                                            <strong>网页内容</strong>
+                                            <p>通过右键菜单检测任何网页上选中的可疑文本内容</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 风险自测评估详情 -->
+                        <div id="self-evaluation-content" class="feature-detail">
+                            <!-- 优化后的左上角部分 -->
+                            <div class="feature-hero-section">
+                                <div class="feature-hero-content">
+                                    <div class="feature-badge">安全评估</div>
+                                    <h1 class="feature-main-title">风险自测评估</h1>
+                                    <p class="feature-hero-description">科学评估个人网络安全风险，提供个性化防护建议</p>
+                                    <div class="feature-stats">
+                                        <div class="stat-item">
+                                            <div class="stat-number">16</div>
+                                            <div class="stat-label">评估维度</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">3</div>
+                                            <div class="stat-label">风险等级</div>
+</div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">5min</div>
+                                            <div class="stat-label">完成时间</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-hero-visual">
+                                    <div class="visual-icon">📝</div>
+                                    <div class="visual-glow"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-description">
+                                <p>通过科学的问卷评估个人面临网络诈骗的风险等级，帮助您了解自身安全状况。</p>
+                            </div>
+                            
+                            <div class="feature-showcase">
+                                <div class="showcase-image">
+                                    <div class="feature-image-placeholder">
+                                        <svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="300" height="180" rx="8" fill="#f0f4f8"/>
+                                            <rect x="20" y="20" width="260" height="30" rx="4" fill="#e9ecef"/>
+                                            <rect x="20" y="60" width="240" height="30" rx="4" fill="#e9ecef"/>
+                                            <rect x="20" y="100" width="240" height="30" rx="4" fill="#e9ecef"/>
+                                            <circle cx="40" cy="75" r="8" fill="#3498db"/>
+                                            <circle cx="40" cy="115" r="8" fill="#3498db"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="showcase-content">
+                                    <h3>功能演示</h3>
+                                    <div class="demo-example">
+                                        <div class="example-text">
+                                            <strong>评估内容：</strong>
+                                            <p class="example-text-content">包含16个问题的风险评估问卷，涵盖个人信息安全、网络行为习惯等多个维度</p>
+                                        </div>
+                                    </div>
+                                    <button class="secondary-button start-assessment-button" onclick="document.getElementById('selfEvaluationBtn').click()">开始风险评估</button>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-benefits">
+                                <h3>评估维度</h3>
+                                <div class="benefits-grid">
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🔐</div>
+                                        <h4>个人信息安全</h4>
+                                        <p>评估个人信息保护意识和行为</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🌐</div>
+                                        <h4>网络行为习惯</h4>
+                                        <p>分析日常网络使用中的风险点</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">📱</div>
+                                        <h4>设备安全状况</h4>
+                                        <p>评估设备安全防护措施是否完善</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">💡</div>
+                                        <h4>防诈知识水平</h4>
+                                        <p>测试对常见诈骗手法的识别能力</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-result-sample">
+                                <h3>评估结果样例</h3>
+                                <div class="result-preview">
+                                    <div class="risk-level-indicator">
+                                        <div class="level-icon">⚠️</div>
+                                        <div class="level-info">
+                                            <div class="level-title">中风险</div>
+                                            <div class="level-score">得分为25分（满分48分）</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-description">
+                                        <p>系统会根据您的回答提供详细的风险分析和个性化的改进建议，帮助您提升防诈骗能力。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 防诈知识学习详情 -->
+                        <div id="knowledge-learning-content" class="feature-detail">
+                            <!-- 优化后的左上角部分 -->
+                            <div class="feature-hero-section">
+                                <div class="feature-hero-content">
+                                    <div class="feature-badge">知识库</div>
+                                    <h1 class="feature-main-title">防诈知识学习</h1>
+                                    <p class="feature-hero-description">全面了解诈骗手法，提升个人防范意识和能力</p>
+                                    <div class="feature-stats">
+                                        <div class="stat-item">
+                                            <div class="stat-number">6</div>
+                                            <div class="stat-label">诈骗类型</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">50+</div>
+                                            <div class="stat-label">防范技巧</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-number">100%</div>
+                                            <div class="stat-label">免费学习</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature-hero-visual">
+                                    <div class="visual-icon">💡</div>
+                                    <div class="visual-glow"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-description">
+                                <p>全面了解各类诈骗手段和有效的防范措施，提升个人防诈骗意识和能力。</p>
+                            </div>
+                            
+                            <div class="feature-showcase">
+                                <div class="showcase-image">
+                                    <div class="feature-image-placeholder">
+                                        <svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="300" height="180" rx="8" fill="#f0f4f8"/>
+                                            <rect x="20" y="20" width="260" height="20" rx="4" fill="#e9ecef"/>
+                                            <rect x="20" y="50" width="120" height="110" rx="4" fill="#e9ecef"/>
+                                            <rect x="150" y="50" width="130" height="110" rx="4" fill="#e9ecef"/>
+                                            <rect x="40" y="70" width="80" height="20" rx="4" fill="#3498db"/>
+                                            <rect x="40" y="100" width="80" height="20" rx="4" fill="#3498db"/>
+                                            <rect x="40" y="130" width="80" height="20" rx="4" fill="#3498db"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="showcase-content">
+                                    <h3>知识内容</h3>
+                                    <div class="demo-example">
+                                        <div class="example-text">
+                                            <strong>包含诈骗类型：</strong>
+                                            <p class="example-text-content">刷单兼职诈骗、冒充公检法诈骗、投资理财诈骗、虚假购物诈骗、中奖诈骗等</p>
+                                        </div>
+                                    </div>
+                                    <button class="primary-button view-knowledge-button" onclick="showPage('knowledge')">浏览知识库</button>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-benefits">
+                                <h3>知识内容特点</h3>
+                                <div class="benefits-grid">
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">📚</div>
+                                        <h4>全面覆盖</h4>
+                                        <p>涵盖各类常见诈骗手法和案例</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🔍</div>
+                                        <h4>深入解析</h4>
+                                        <p>详细分析诈骗原理和识别方法</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">💡</div>
+                                        <h4>实用指南</h4>
+                                        <p>提供具体的防范措施和应对策略</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon">🔄</div>
+                                        <h4>实时更新</h4>
+                                        <p>定期更新最新诈骗手法和防范知识</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="knowledge-test">
+                                <h3>知识测试</h3>
+                                <div class="test-preview">
+                                    <div class="test-icon">🧠</div>
+                                    <div class="test-info">
+                                        <p>完成知识学习后，可以通过知识测试巩固所学内容，检验防诈骗能力的提升。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 防诈知识页面 -->
+        <div id="knowledge-page" class="page-content">
+            <div class="main-content">
+                <div class="sidebar-section">
+                    <aside class="feature-sidebar">
+                        <div class="feature-card" onclick="showKnowledgeDetail('刷单兼职诈骗')">
+                            <div class="feature-icon">💼</div>
+                            <h3>刷单兼职诈骗</h3>
+                            <p>高额回报诱饵，要求先垫付资金</p>
+                        </div>
+                        <div class="feature-card" onclick="showKnowledgeDetail('冒充公检法')">
+                            <div class="feature-icon">👮</div>
+                            <h3>冒充公检法</h3>
+                            <p>冒充执法人员要求转账到安全账户</p>
+                        </div>
+                        <div class="feature-card" onclick="showKnowledgeDetail('投资理财诈骗')">
+                            <div class="feature-icon">💰</div>
+                            <h3>投资理财诈骗</h3>
+                            <p>虚假投资平台承诺高额回报</p>
+                        </div>
+                        <div class="feature-card" onclick="showKnowledgeDetail('虚假购物诈骗')">
+                            <div class="feature-icon">🛒</div>
+                            <h3>虚假购物诈骗</h3>
+                            <p>低价商品诱导，支付后不发货</p>
+                        </div>
+                        <div class="feature-card" onclick="showKnowledgeDetail('冒充客服诈骗')">
+                            <div class="feature-icon">📞</div>
+                            <h3>冒充客服诈骗</h3>
+                            <p>冒充客服以退款理赔为由诈骗</p>
+                        </div>
+                        <div class="feature-card" onclick="showKnowledgeDetail('中奖诈骗')">
+                            <div class="feature-icon">🎁</div>
+                            <h3>中奖诈骗</h3>
+                            <p>虚假中奖信息要求先交税费</p>
+                        </div>
+                    </aside>
+                </div>
+                
+                <div class="central-content">
+                    <div class="instruction-section">
+                        <h3>防诈知识学习</h3>
+                        <p>点击左侧分类查看详细的诈骗手法和防范措施</p>
+                    </div>
+                    
+                    <div class="input-section">
+                        <div class="input-header">
+                            <h3 id="knowledge-title">选择左侧分类开始学习</h3>
+                            <p class="input-description" id="knowledge-description">了解各类诈骗手段的特征和识别方法</p>
+                        </div>
+                        
+                        <div class="knowledge-content" id="knowledge-content">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">📚</div>
+                                <h4>欢迎学习防诈知识</h4>
+                                <p>请从左侧选择一个诈骗类型，查看详细的防范指南</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 快速测试区 -->
+                    <div class="quick-test-section">
+                        <h3>防诈知识小测试</h3>
+                        <div class="test-cards">
+                            <div class="test-card">
+                                <h4>识别诈骗信息</h4>
+                                <p>测试您识别各类诈骗信息的能力</p>
+                                <button class="test-btn" data-test="identification">开始测试</button>
+                            </div>
+                            <div class="test-card">
+                                <h4>应急处理能力</h4>
+                                <p>模拟遇到诈骗时的正确处理方式</p>
+                                <button class="test-btn" data-test="response">开始测试</button>
+                            </div>
+                            <div class="test-card">
+                                <h4>防范知识掌握</h4>
+                                <p>检验防诈知识掌握程度</p>
+                                <button class="test-btn" data-test="knowledge">开始测试</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系我们页面 -->
+        <div id="contact-page" class="page-content">
+            <div class="main-content">
+                <div class="central-content">
+                    <div class="input-section">
+                        <div class="input-header">
+                            <h3>联系我们</h3>
+                            <p class="input-description">如有任何问题或建议，请通过以下方式联系我们</p>
+                        </div>
+                        
+                        <div class="contact-content">
+                            <div class="contact-info">
+                                <h4>联系方式</h4>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📧</span>
+                                    <div>
+                                        <strong>邮箱</strong>
+                                        <p>contact@antiscam.example.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📞</span>
+                                    <div>
+                                        <strong>电话</strong>
+                                        <p>400-123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">🕒</span>
+                                    <div>
+                                        <strong>服务时间</strong>
+                                        <p>周一至周五 9:00-18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 所有弹窗保持不变 -->
+    <!-- 风险评估结果弹窗 -->
+    <div id="alertDialog" class="dialog">
+        <div class="dialog-header">
+            <h3 class="dialog-title">风险评估结果</h3>
+            <span class="close-btn">×</span>
+        </div>
+        <div class="dialog-content">
+            <div class="risk-icon-container">
+                <span id="riskIcon" class="risk-icon">⚠️</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">检测文本</span>
+                <div id="detectedText" class="info-value"></div>
+            </div>
+            <div class="info-item">
+                <span class="info-label">风险等级</span>
+                <div id="riskLevel" class="info-value"></div>
+            </div>
+            <div class="info-item">
+                <span class="info-label">风险描述</span>
+                <div id="riskDescription" class="info-value"></div>
+            </div>
+            <div class="info-item">
+                <span class="info-label">建议措施</span>
+                <div id="riskRecommendations" class="info-value"></div>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <button id="emergencyBtn" class="danger-button">紧急处理</button>
+            <button id="closeAlertBtn" class="primary-button">关闭</button>
+        </div>
+    </div>
+
+    <!-- 风险检测自评价弹窗 -->
+    <div id="selfEvaluationDialog" class="dialog evaluation-dialog">
+        <div class="dialog-header">
+            <h3 class="dialog-title">网络诈骗风险自评估</h3>
+            <span class="close-btn">×</span>
+        </div>
+        <div class="dialog-content">
+            <div class="assessment-intro">
+                <p>本问卷包含16个问题，将帮助您评估个人面临网络诈骗的风险等级。请根据您的实际情况如实回答。</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0/16 已完成</span>
+                </div>
+            </div>
+            
+            <div class="risk-assessment">
+                <div class="assessment-form" id="assessmentForm">
+                    <div class="questions-container">
+                        <!-- 个人信息安全 -->
+                        <div class="question-group">
+                            <h4 class="group-title">个人信息安全</h4>
+                            <div class="question">
+                                <p>1. 您是否曾在不安全的网站上输入过个人身份信息？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q1" value="3"> 是，经常</label>
+                                    <label><input type="radio" name="q1" value="2"> 是，偶尔</label>
+                                    <label><input type="radio" name="q1" value="1"> 否，很少</label>
+                                    <label><input type="radio" name="q1" value="0"> 否，从不</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>2. 您是否会在社交媒体上公开个人详细信息（如生日、地址等）？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q2" value="3"> 是，经常</label>
+                                    <label><input type="radio" name="q2" value="2"> 是，偶尔</label>
+                                    <label><input type="radio" name="q2" value="1"> 否，很少</label>
+                                    <label><input type="radio" name="q2" value="0"> 否，从不</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>3. 您是否会在多个网站使用相同的密码？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q3" value="3"> 是，所有网站都用同一密码</label>
+                                    <label><input type="radio" name="q3" value="2"> 是，大部分网站用同一密码</label>
+                                    <label><input type="radio" name="q3" value="1"> 否，重要网站使用不同密码</label>
+                                    <label><input type="radio" name="q3" value="0"> 否，所有网站都使用不同密码</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>4. 您是否会在公共WiFi下进行银行转账或登录重要账户？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q4" value="3"> 是，经常</label>
+                                    <label><input type="radio" name="q4" value="2"> 是，偶尔</label>
+                                    <label><input type="radio" name="q4" value="1"> 否，很少</label>
+                                    <label><input type="radio" name="q4" value="0"> 否，从不</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 网络行为习惯 -->
+                        <div class="question-group">
+                            <h4 class="group-title">网络行为习惯</h4>
+                            <div class="question">
+                                <p>5. 您收到陌生号码发来的短信链接，通常会如何处理？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q5" value="3"> 直接点击查看</label>
+                                    <label><input type="radio" name="q5" value="2"> 犹豫后点击查看</label>
+                                    <label><input type="radio" name="q5" value="1"> 仔细检查后再决定是否点击</label>
+                                    <label><input type="radio" name="q5" value="0"> 直接删除不点击</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>6. 您是否会因为"优惠"、"免费"等字眼而降低警惕性？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q6" value="3"> 是，很容易被吸引</label>
+                                    <label><input type="radio" name="q6" value="2"> 是，有时会忽略风险</label>
+                                    <label><input type="radio" name="q6" value="1"> 否，会保持一定警惕</label>
+                                    <label><input type="radio" name="q6" value="0"> 否，不会轻易相信</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>7. 您是否会下载并安装来源不明的手机应用程序？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q7" value="3"> 是，经常</label>
+                                    <label><input type="radio" name="q7" value="2"> 是，偶尔</label>
+                                    <label><input type="radio" name="q7" value="1"> 否，很少</label>
+                                    <label><input type="radio" name="q7" value="0"> 否，从不</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>8. 您对网络诈骗手段的了解程度如何？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q8" value="3"> 了解很少，不知道常见手法</label>
+                                    <label><input type="radio" name="q8" value="2"> 了解一般，知道几种常见手法</label>
+                                    <label><input type="radio" name="q8" value="1"> 了解较多，知道大部分常见手法</label>
+                                    <label><input type="radio" name="q8" value="0"> 非常了解，熟悉各类诈骗手段</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 金融安全意识 -->
+                        <div class="question-group">
+                            <h4 class="group-title">金融安全意识</h4>
+                            <div class="question">
+                                <p>9. 如果接到自称银行/支付平台客服的电话，您会怎么做？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q9" value="3"> 完全相信并按照指示操作</label>
+                                    <label><input type="radio" name="q9" value="2"> 基本相信，但会问一些问题</label>
+                                    <label><input type="radio" name="q9" value="1"> 半信半疑，会主动联系官方客服核实</label>
+                                    <label><input type="radio" name="q9" value="0"> 保持警惕，不会轻易相信</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>10. 您是否会因为"高收益、低风险"的承诺而参与投资理财？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q10" value="3"> 是，很容易被吸引</label>
+                                    <label><input type="radio" name="q10" value="2"> 是，会考虑但有所保留</label>
+                                    <label><input type="radio" name="q10" value="1"> 否，会仔细评估风险</label>
+                                    <label><input type="radio" name="q10" value="0"> 否，不会相信此类承诺</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>11. 您是否会向陌生人提供银行卡号、验证码等敏感信息？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q11" value="3"> 是，如果对方看起来可信</label>
+                                    <label><input type="radio" name="q11" value="2"> 是，在特定情况下会提供</label>
+                                    <label><input type="radio" name="q11" value="1"> 否，除非确认对方身份</label>
+                                    <label><input type="radio" name="q11" value="0"> 否，绝对不会提供</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>12. 您是否了解"安全账户"的骗局？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q12" value="3"> 不了解，不知道是什么</label>
+                                    <label><input type="radio" name="q12" value="2"> 听说过，但不清楚具体内容</label>
+                                    <label><input type="radio" name="q12" value="1"> 了解，知道这是常见骗局</label>
+                                    <label><input type="radio" name="q12" value="0"> 非常了解，能轻易识别</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 社交安全防护 -->
+                        <div class="question-group">
+                            <h4 class="group-title">社交安全防护</h4>
+                            <div class="question">
+                                <p>13. 您是否会轻易添加陌生人为社交媒体好友？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q13" value="3"> 是，经常</label>
+                                    <label><input type="radio" name="q13" value="2"> 是，偶尔</label>
+                                    <label><input type="radio" name="q13" value="1"> 否，很少</label>
+                                    <label><input type="radio" name="q13" value="0"> 否，从不</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>14. 如果在网上遇到自称"高富帅/白富美"的人向您借钱，您会怎么做？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q14" value="3"> 相信并借钱给对方</label>
+                                    <label><input type="radio" name="q14" value="2"> 犹豫后可能会借钱</label>
+                                    <label><input type="radio" name="q14" value="1"> 怀疑真实性，不会轻易借钱</label>
+                                    <label><input type="radio" name="q14" value="0"> 肯定是骗局，直接拒绝</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>15. 您是否知道如何识别虚假网站？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q15" value="3"> 不知道，无法识别</label>
+                                    <label><input type="radio" name="q15" value="2"> 不太清楚，很难识别</label>
+                                    <label><input type="radio" name="q15" value="1"> 知道一些方法，但不确定</label>
+                                    <label><input type="radio" name="q15" value="0"> 知道，能有效识别</label>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <p>16. 您是否会定期备份重要数据和更新安全软件？</p>
+                                <div class="options">
+                                    <label><input type="radio" name="q16" value="3"> 从不备份，也不更新</label>
+                                    <label><input type="radio" name="q16" value="2"> 很少备份，偶尔更新</label>
+                                    <label><input type="radio" name="q16" value="1"> 有时备份，定期更新</label>
+                                    <label><input type="radio" name="q16" value="0"> 经常备份，及时更新</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-buttons">
+                    <button class="submit-btn" id="submitAssessment">提交评估</button>
+                    <button class="reset-btn" id="resetAssessment">重置问卷</button>
+                </div>
+            </div>
+            
+            <!-- 评估结果展示区 -->
+            <div class="result" id="assessmentResult" style="display: none;">
+                <div class="result-header">
+                    <h3>您的风险评估结果</h3>
+                    <div class="result-icon" id="resultIcon">📊</div>
+                </div>
+                <div class="result-content">
+                    <div class="info-item">
+                        <span class="info-label">风险得分</span>
+                        <div id="riskScore" class="info-value"></div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">风险等级</span>
+                        <div id="overallRiskLevel" class="info-value"></div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">风险分析</span>
+                        <div id="riskAnalysis" class="info-value"></div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">改进建议</span>
+                        <div id="improvementSuggestions" class="info-value"></div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="reset-btn" id="backToAssessment">重新评估</button>
+                    <button class="primary-button" id="saveResult">保存结果</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 遮罩层 -->
+    <div id="overlay" class="overlay"></div>
+    
+    <!-- 自定义右键菜单 -->
+    <div id="customContextMenu" class="context-menu">
+        <div class="menu-item" id="checkSelectionRisk">检测选中文本风险</div>
+    </div>
+    
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="sidebar-toggle">☰</div>
+        <div class="sidebar-content">
+            <h3>功能导航</h3>
+            <ul>
+                <li onclick="showPage('home')">文本输入检测</li>
+                <li onclick="document.getElementById('selfEvaluationBtn').click()">风险检测自测</li>
+                <li onclick="showPage('knowledge')">防诈知识中心</li>
+                <li onclick="alert('常见诈骗类型:\n1. 刷单兼职诈骗\n2. 冒充公检法诈骗\n3. 虚假投资理财诈骗\n4. 虚假购物诈骗\n5. 冒充客服诈骗')">常见诈骗类型</li>
+                <li onclick="alert('防范技巧:\n1. 不轻易相信陌生来电和信息\n2. 不随意点击可疑链接\n3. 不向陌生人转账汇款\n4. 保护个人信息，不轻易泄露\n5. 遇到可疑情况及时报警')">防范技巧</li>
+                <li onclick="alert('紧急联系:\n- 报警电话: 110\n- 反诈骗中心: 96110\n- 银行客服热线: 各银行官方电话')">紧急联系</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>关于我们</h4>
+                <p>防网络诈骗智能预警系统致力于通过技术手段帮助用户识别和防范各类网络诈骗风险，保护个人财产安全。</p>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>邮箱: contact@antiscam.example.com</p>
+                <p>电话: 400-123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>紧急求助</h4>
+                <p>如遇紧急情况，请立即拨打:</p>
+                <p>报警电话: 110</p>
+                <p>反诈骗中心: 96110</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 防网络诈骗智能预警系统 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="scriptweb.js"></script>
+</body>
+</html>
